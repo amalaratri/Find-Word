@@ -75,5 +75,19 @@ bool searchWord(const char* word, char matrix[][24]) {
     return horizontal(word, matrix, wordLen) || vertical(word, matrix, wordLen) || diagonal(word, matrix, wordLen);
 }
 
+int main() {
+    int N;
+    cin >> N;
+    cin.ignore(); 
+
+    char words[N][24]; 
+
+    
+    for (int i = 0; i < N; ++i) {
+        cin.getline(words[i], 24);
+        toUpperCase(words[i]); 
+    }
+
+
 
   
