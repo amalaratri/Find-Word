@@ -8,7 +8,7 @@ void toUpperCase(char* str) {
     }
 }
 
-// Fungsi untuk mencari kata secara horizontal
+// Fungsi ini untuk mencari kata secara horizontal
 bool horizontal(const char* word, char matrix[][24], int wordLen) {
     for (int i = 0; i < 24; ++i) {
         for (int j = 0; j <= 24 - wordLen; ++j) {
