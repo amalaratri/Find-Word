@@ -8,9 +8,9 @@ void toUpperCase(char* str) {
     }
 }
 
-bool horizontal(const char* word, char matrix[][23], int wordLen) {
-    for (int i = 0; i < 23; i++) {
-        for (int j = 0; j <= 23 - wordLen; j++) {
+bool horizontal(const char* word, char matrix[][24], int wordLen) {
+    for (int i = 0; i < 24; i++) {
+        for (int j = 0; j <= 24 - wordLen; j++) {
             bool found = true;
             for (int k = 0; k < wordLen; k++) {
                 if (matrix[j + k][i] != word[k]) {
@@ -24,9 +24,9 @@ bool horizontal(const char* word, char matrix[][23], int wordLen) {
     return false;
 }
 
-bool vertical(const char* word, char matrix[][23], int wordLen) {
-    for (int i = 0; i <= 23 - wordLen; i++) {
-        for (int j = 0; j < 23; j++) {
+bool vertical(const char* word, char matrix[][24], int wordLen) {
+    for (int i = 0; i <= 24 - wordLen; i++) {
+        for (int j = 0; j < 24; j++) {
             bool found = true;
             for (int k = 0; k < wordLen; k++) {
                 if (matrix[i + k][j] != word[k]) {
@@ -131,7 +131,7 @@ int main() {
         toUpperCase(words[i]);
     }
     
- char matrix[23][23] = {
+ char matrix[24][24] = {
         {'A','A','F','L','K','H','P','F','S','S','U','F','I','C','I','C','L','E','S','G','N','N','H'},
         {'S','F','V','R','E','O','M','R','W','L','R','T','T','S','X','O','Q','Q','N','A','O','A','O'},
         {'Q','E','I','A','I','F','X','A','E','I','R','F','V','F','Y','S','X','I','M','I','N','J','I'},
