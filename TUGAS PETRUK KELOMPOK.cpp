@@ -76,6 +76,47 @@ bool diagonalUpRight(const char* word, char matrix[][24], int wordLen) {
     return false;
 }
 
+bool diagonalDownLeft(const char* word, char matrix[][24], int wordLen) {
+    for (int i = wordLen - 1; i < 24; i++) {
+        for (int j = 0; j <= 24 - wordLen; j++) {
+            bool found = true;
+            for (int k = 0; k < wordLen; k++) {
+                if (matrix[i - k][j + k] != word[k]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool diagonalDownRight(const char* word, char matrix[][24], int wordLen) {
+    for (int i = wordLen - 1; i < 24; i++) {
+        for (int j = wordLen - 1; j < 24; j++) {
+            bool found = true;
+            for (int k = 0; k < wordLen; k++) {
+                if (matrix[i - k][j - k] != word[k]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool searchWord(const char* word, char matrix[][24]) {
+    int wordLen = strlen(word);
+    return horizontal(word, matrix, wordLen) || vertical(word, matrix, wordLen) || diagonalUpLeft(word, matrix, wordLen) || diagonalUpRight(word, matrix, wordLen) || diagonalDownLeft(word, matrix, wordLen) || diagonalDownRight(word, matrix, wordLen);
+}
+
 
 int main() {
     int N;
