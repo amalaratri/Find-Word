@@ -13,7 +13,7 @@ bool horizontal(const char* word, char matrix[][24], int wordLen) {
         for (int j = 0; j <= 24 - wordLen; j++) {
             bool found = true;
             for (int k = 0; k < wordLen; k++) {
-                if (matrix[i][j + k] != word[k]) {
+                if (matrix[j + k][i] != word[k]) {
                     found = false;
                     break;
                 }
