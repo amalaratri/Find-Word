@@ -41,7 +41,4 @@ bool vertical(const char* word, char matrix[][24], int wordLen) {
 }
 
 
-    return false;
-}
-
-
+  
